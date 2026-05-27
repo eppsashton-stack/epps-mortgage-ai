@@ -1,267 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Epps Mortgage AI | Nationwide Mortgage Answers</title>
-  <meta name="description" content="Nationwide AI-powered mortgage questions, payment calculators, and . Educational mortgage questions, payment calculators, and next-step guidance from Broughton Ashton Epps.">
-  <style>
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#030712;color:white}
-    a{text-decoration:none;color:inherit}.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 7%;border-bottom:1px solid rgba(255,255,255,.1);position:sticky;top:0;background:#030712;z-index:100}
-    .brand{font-weight:900;letter-spacing:.06em}.links{display:flex;gap:24px;color:#b8c1d6;font-size:14px}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;padding:90px 7%;align-items:center}
-    .pill{display:inline-block;border:1px solid rgba(59,130,246,.45);background:rgba(59,130,246,.12);color:#93c5fd;padding:10px 15px;border-radius:999px;font-size:14px;margin-bottom:24px}
-    h1{font-size:clamp(44px,8vw,82px);line-height:.95;margin:0;font-weight:950;letter-spacing:-.06em}.sub{font-size:20px;color:#b8c1d6;line-height:1.6;max-width:680px;margin:28px 0}
-    .btns{display:flex;gap:14px;flex-wrap:wrap}.btn{padding:16px 24px;border-radius:18px;font-weight:800;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);cursor:pointer;transition:all .3s ease;font-size:15px}
-    .btn:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.1)}.primary{background:#2563eb;border-color:#3b82f6;box-shadow:0 20px 60px rgba(37,99,235,.35);color:white}
-    .primary:hover{background:#1d4ed8;box-shadow:0 20px 80px rgba(37,99,235,.5)}.card{border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border-radius:24px;padding:35px;backdrop-filter:blur(10px)}
-    .chat{display:grid;gap:14px}.bubble{background:rgba(255,255,255,.07);padding:15px;border-radius:18px;color:#dbeafe}.ai{background:rgba(37,99,235,.22);border:1px solid rgba(59,130,246,.25)}
-    .section{padding:80px 7%;border-top:1px solid rgba(255,255,255,.1)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.feature{padding:25px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(255,255,255,.02)}
-    input,select,textarea{width:100%;padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#08111f;color:white;margin-top:8px;font-family:inherit;font-size:16px} 
-    input:required,select:required,textarea:required{border-color:rgba(245,158,11,.35)}
-    label{display:block;margin-bottom:20px;font-weight:600;font-size:14px}
-    .notice{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.35);color:#fde68a;border-radius:22px;padding:18px;line-height:1.5}.legal{font-size:13px;color:#aeb8cc;line-height:1.7}
-    footer{padding:35px 7%;color:#8d98ad;border-top:1px solid rgba(255,255,255,.1)}
-    .small{font-size:13px;color:#aeb8cc}.success-message{display:none;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);color:#86efac;border-radius:18px;padding:18px;margin-bottom:20px;text-align:center;font-weight:600}
-    .success-message.show{display:block;animation:slideIn .4s ease}
-    .specialist-message{background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.35);color:#93c5fd;border-radius:18px;padding:18px;margin-top:20px;text-align:center;font-weight:600;display:none}
-    .specialist-message.show{display:block;animation:slideIn .4s ease}
-    @keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-    .form-wrapper{position:relative}.loading{display:none}.loading.show{display:inline-block;margin-left:8px}
-    .cta-headline{font-size:32px;font-weight:900;color:#3b82f6;margin-bottom:10px;text-align:center}
-    .two-column{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    @media(max-width:850px){
-      .hero{grid-template-columns:1fr;padding-top:55px}
-      .grid{grid-template-columns:1fr}
-      .links{display:none}
-      .two-column{grid-template-columns:1fr}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage AI</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafc; /* Luxury feel */
+            color: #333;
+        }
+
+        header {
+            background: #0d47a1; /* Deep blue, luxury */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        form {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #00bfa5; /* Complementary luxury accent */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #00796b;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav class="nav">
-    <div><div class="brand">EPPS MORTGAGE AI</div><small style="color:#8d98ad">EppsMortgage.ai • Broughton Ashton Epps • NMLS ID #1834688</small></div>
-    <div class="links"><a href="#calculator">Calculator</a><a href="#apply">Lead Filter</a><a href="#platform">How It Helps</a><a href="#legal">Legal</a><a href="#contact">Contact</a></div>
-  </nav>
+    <header>
+        <h1>Welcome to Ashton Epps Mortgage AI</h1>
+        <p>Your luxury destination for modern mortgage solutions</p>
+    </header>
 
-  <main>
-    <section class="hero">
-      <div>
-        <span class="pill">Nationwide Mortgage Questions • Smarter Mortgage Help</span>
-        <h1>Mortgage Answers. Powered by AI.</h1>
-        <p class="sub">EppsMortgage.ai helps buyers nationwide get mortgage clarity fast, estimate payments, understand loan options, and feel more confident before taking the next step.</p>
-        <div class="btns"><a class="btn primary" href="#apply">Get Personalized Options →</a><a class="btn" href="#calculator">Calculate Payment</a><a class="btn" href="tel:7578793963">Call (757) 879-3963</a></div>
-        <p class="small" style="margin-top:18px">Educational information only. Not a loan approval, loan commitment, rate lock, or guarantee of terms.</p>
-      </div>
+    <div class="container">
+        <h2>Ask AI Your Mortgage Questions</h2>
+        <p>Have a question about mortgages? Submit your inquiry below, and our AI will handle the rest!</p>
 
-      <div class="card">
-        <h2>AI Mortgage Assistant</h2>
-        <p style="color:#9ca8bd">Ask about buying, refinancing, VA loans, FHA, credit, payments, or how to apply.</p>
-        <div class="chat">
-          <div class="bubble">I'm thinking about buying a home. Where should I start?</div>
-          <div class="bubble ai">Great question. The best first step is understanding your budget, credit profile, down payment, and timeline.</div>
-          <div class="bubble">Can I ask questions before I'm ready to apply?</div>
-          <div class="bubble ai">Yes. You can ask questions, run numbers, compare options, and learn what your next step may look like before applying.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="calculator">
-      <h2 style="font-size:44px;margin-top:0">Mortgage Calculator</h2>
-      <p style="color:#b8c1d6">Estimated principal and interest only. Taxes, insurance, HOA dues, mortgage insurance, VA funding fee, APR, and closing costs may change the actual payment.</p>
-      <div class="card calc">
-        <label>Home Price<input id="price" value="450000"></label>
-        <label>Down Payment<input id="down" value="45000"></label>
-        <label>Interest Rate %<input id="rate" value="6.25"></label>
-        <label>Term Years<input id="term" value="30"></label>
-        <button class="btn primary" onclick="calc()">Calculate Payment</button>
-        <div>Estimated principal & interest:</div><div class="result" id="payment">$2,493</div>
-      </div>
-    </section>
-
-    <section class="section" id="apply">
-      <div style="text-align:center;margin-bottom:40px">
-        <div class="cta-headline">Get Personalized Mortgage Options Fast</div>
-        <p style="color:#b8c1d6;font-size:18px">Tell us about your situation and we'll connect you with a mortgage specialist.</p>
-      </div>
-
-      <div class="grid">
-        <div class="feature"><h3>Buying Soon</h3><p>Planning to buy soon and wants help understanding budget, payment, and approval steps.</p></div>
-        <div class="feature"><h3>Still Learning</h3><p>Researching options, comparing payments, or learning how mortgage approval works.</p></div>
-        <div class="feature"><h3>Mortgage Scenario</h3><p>Has a unique question about credit, income, VA loans, refinancing, or affordability.</p></div>
-      </div>
-
-      <div class="form-wrapper" style="margin-top:35px">
-        <div class="success-message" id="successMessage">
-          ✓ Thank you! Your application has been received. We'll review your information and contact you shortly.
-        </div>
-        <form class="card" id="mortgageForm" method="POST" action="https://formsubmit.co/epps.ashton@gmail.com">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="">
-          
-          <h3 style="margin-top:0">Your Information</h3>
-          
-          <label>Full Name <span style="color:#ef4444">*</span><input type="text" name="Full Name" id="name" required placeholder="John Smith"></label>
-          
-          <label>Email Address <span style="color:#ef4444">*</span><input type="email" name="Email Address" id="email" required placeholder="john@example.com"></label>
-          
-          <label>Phone Number <span style="color:#ef4444">*</span><input type="tel" name="Phone Number" id="phone" required placeholder="(555) 123-4567"></label>
-
-          <h3>Mortgage Details</h3>
-
-          <label>Loan Type Interested In <span style="color:#ef4444">*</span>
-            <select name="Loan Type Interested In" id="loanType" required>
-              <option value="">Select loan type...</option>
-              <option>Purchase (New Home)</option>
-              <option>Refinance (Current Home)</option>
-              <option>Home Equity Line of Credit (HELOC)</option>
-              <option>Cash-Out Refinance</option>
-              <option>FHA Loan</option>
-              <option>VA Loan</option>
-              <option>USDA Loan</option>
-              <option>Jumbo Loan</option>
-              <option>Not sure yet</option>
-            </select>
-          </label>
-
-          <label>Purchase or Refinance? <span style="color:#ef4444">*</span>
-            <select name="Purchase or Refinance" id="transactionType" required>
-              <option value="">Select one...</option>
-              <option>Purchase a new home</option>
-              <option>Refinance current home</option>
-              <option>Both - exploring options</option>
-            </select>
-          </label>
-
-          <label>Estimated Credit Score <span style="color:#ef4444">*</span>
-            <select name="Estimated Credit Score" id="credit" required>
-              <option value="">Select range...</option>
-              <option>740+</option>
-              <option>700–739</option>
-              <option>660–699</option>
-              <option>620–659</option>
-              <option>Below 620</option>
-              <option>Not sure</option>
-            </select>
-          </label>
-
-          <div class="two-column">
-            <label>Property State <span style="color:#ef4444">*</span>
-              <select name="Property State" id="state" required>
-                <option value="">Select state...</option>
-                <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option>
-                <option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
-                <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
-                <option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
-                <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
-              </select>
-            </label>
-
-            <label>Estimated Purchase Price <span style="color:#ef4444">*</span>
-              <input type="number" name="Estimated Purchase Price" id="purchasePrice" required placeholder="$450,000">
-            </label>
-          </div>
-
-          <label>Down Payment <span style="color:#ef4444">*</span>
-            <input type="number" name="Down Payment" id="downPayment" required placeholder="$45,000 or percentage">
-          </label>
-
-          <label>Questions or Notes
-            <textarea name="Questions or Notes" id="message" rows="4" placeholder="Tell us about your situation, specific questions, or anything else you'd like us to know..."></textarea>
-          </label>
-
-          <label style="display:flex;gap:10px;align-items:flex-start;margin-top:14px">
-            <input type="checkbox" name="consent" required style="width:auto;margin-top:4px;min-width:20px">
-            <span style="margin-top:0">I agree to be contacted by call, text, or email about my mortgage inquiry. Message/data rates may apply. Consent is not required to obtain credit.</span>
-          </label>
-
-          <button type="submit" class="btn primary" style="margin-top:20px;width:100%;padding:18px;font-size:16px">Get Personalized Mortgage Options Now</button>
-
-          <div class="specialist-message" id="specialistMessage">
-            ✓ A mortgage specialist will contact you shortly.
-          </div>
+        <form action="https://formsubmit.co/epps.ashton@gmail.com" method="POST">
+            <!-- FormSubmit hidden fields -->
+            <input type="hidden" name="_template" value="table">
+            
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="Full Name" placeholder="Enter your full name" required>
+            
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="Phone Number" placeholder="Enter your phone number" required>
+            
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="Email Address" placeholder="Enter your email address" required>
+            
+            <label for="question">Your Question</label>
+            <textarea id="question" name="Question" rows="5" placeholder="What do you want to know about mortgages?" required></textarea>
+            
+            <button type="submit">Submit</button>
         </form>
-      </div>
-    </section>
-
-
-    <section class="section" id="platform">
-      <h2 style="font-size:44px;margin-top:0">Built for Better Mortgage Clarity</h2>
-      <p style="color:#b8c1d6">Instead of leaving people confused, EppsMortgage.ai helps visitors ask questions, calculate payments, compare scenarios, and understand mortgage options in a simple way.</p>
-      <div class="grid">
-        <div class="feature"><h3>Ask Questions</h3><p>Get simple explanations about buying, refinancing, VA loans, FHA loans, credit, income, and payments.</p></div>
-        <div class="feature"><h3>Run Scenarios</h3><p>Compare estimated payments, down payments, timelines, and possible loan paths.</p></div>
-        <div class="feature"><h3>Know Your Next Step</h3><p>Leave with a clearer idea of what to do next, whether you are ready now or still planning.</p></div>
-      </div>
-    </section>
-
-    <section class="section" id="legal">
-      <h2 style="font-size:44px;margin-top:0">Legal + Compliance Disclosures</h2>
-      <div class="notice"><strong>Launch note:</strong> This is compliance-first public preview language. Before paid advertising or collecting applications, confirm with your sponsoring company/broker.</div>
-      <div class="card legal" style="margin-top:20px">
-        <p><strong>Broughton Ashton Epps • NMLS ID #1834688</strong></p>
-        <p>Verify licensing information through NMLS Consumer Access: www.nmlsconsumeraccess.org</p>
-        <p>Epps Mortgage AI provides educational mortgage information, payment estimates, mortgage education tools, scenario guidance, and payment calculators. Information shown is not a loan application, pre-approval, approval, or guarantee of terms or conditions.</p>
-        <p>All examples, calculations, and estimates are for informational purposes only. Actual loan eligibility, interest rate, APR, fees, payment, and approval depend on credit profile, income, employment history, assets, liabilities, and other factors.</p>
-        <p>Nationwide users may ask educational questions and request help. Mortgage activity, referrals, and applications must be handled only by properly licensed mortgage professionals in their state.</p>
-        <p>No government agency endorsement is implied. VA, FHA, USDA, and other program references are educational only and subject to official program rules.</p>
-        <p>Equal Housing Opportunity. Do not submit Social Security numbers, bank statements, tax returns, or sensitive documents through this preview page.</p>
-        <p><strong>Privacy Notice Preview:</strong> Lead information submitted through this site may be used to respond to inquiries, evaluate mortgage needs, route leads to appropriate licensed professionals, and improve the user experience.</p>
-        <p><strong>TCPA/SMS Consent Preview:</strong> By submitting a form with a phone number, the user may consent to receive calls, texts, or emails related to their inquiry. Consent is not required to obtain credit.</p>
-        <p><strong>Fair Lending:</strong> Epps Mortgage AI does not make eligibility decisions based on prohibited factors and is intended to support equal access to mortgage education and proper routing to licensed professionals.</p>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <h2>Contact</h2>
-      <p>Phone: <a href="tel:7578793963">(757) 879-3963</a></p>
-      <p>Email: <a href="mailto:hello@eppsmortgage.ai">hello@eppsmortgage.ai</a></p>
-      <p>Nationwide mortgage questions welcomed. Personalized support may vary by licensing, location, and loan scenario.</p>
-    </section>
-  </main>
-
-  <footer>© Epps Mortgage AI • EppsMortgage.ai • Broughton Ashton Epps • NMLS ID #1834688 • Equal Housing Opportunity • Compliance review required before public launch.</footer>
-
-  <script>
-    function calc(){
-      let P=+price.value-(+down.value);
-      let r=(+rate.value/100)/12;
-      let n=+term.value*12;
-      let m=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
-      payment.innerText=m.toLocaleString('en-US',{style:'currency',currency:'USD'});
-    }
-
-    // Form submission handler
-    document.getElementById('mortgageForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get current page URL
-      const currentUrl = window.location.href.split('#')[0];
-      
-      // Update the hidden redirect field
-      document.querySelector('input[name="_next"]').value = currentUrl;
-      
-      // Show success message
-      const successMsg = document.getElementById('successMessage');
-      successMsg.classList.add('show');
-      
-      // Show specialist message
-      const specialistMsg = document.getElementById('specialistMessage');
-      setTimeout(() => {
-        specialistMsg.classList.add('show');
-      }, 600);
-      
-      // Disable the submit button
-      const submitBtn = this.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting...';
-      
-      // Submit the form to FormSubmit
-      setTimeout(() => {
-        this.submit();
-      }, 2000);
-    });
-
-    calc();
-  </script>
+    </div>
 </body>
 </html>
