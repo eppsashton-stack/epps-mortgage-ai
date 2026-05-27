@@ -26,20 +26,7 @@
             margin: auto;
         }
 
-        form {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input, textarea {
+        textarea {
             width: calc(100% - 20px);
             padding: 10px;
             margin-bottom: 15px;
@@ -48,7 +35,7 @@
         }
 
         button {
-            background: #00bfa5; /* Complementary luxury accent */
+            background: #00bfa5;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -83,26 +70,38 @@
 
     <div class="container">
         <h2>Ask AI Your Mortgage Questions</h2>
-        <p>Have a question about mortgages? Submit your inquiry below, and our AI will handle the rest!</p>
+        <textarea id="ai-question" rows="4" placeholder="Type your mortgage question here..."></textarea>
+        <button id="ask-ai-button">Get Answer</button>
+        <p id="ai-answer" style="margin-top: 15px; color: #555;">Your answer will appear here.</p>
+    </div>
 
+    <div class="container">
+        <h2>Request a Callback</h2>
         <form action="https://formsubmit.co/epps.ashton@gmail.com" method="POST">
-            <!-- FormSubmit hidden fields -->
             <input type="hidden" name="_template" value="table">
-            
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="Full Name" placeholder="Enter your full name" required>
-            
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="Phone Number" placeholder="Enter your phone number" required>
-            
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="Full Name" placeholder="Enter your full name">
+
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="Email Address" placeholder="Enter your email address" required>
-            
-            <label for="question">Your Question</label>
-            <textarea id="question" name="Question" rows="5" placeholder="What do you want to know about mortgages?" required></textarea>
-            
+            <input type="email" id="email" name="Email Address" placeholder="Enter your email address">
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="Phone Number" placeholder="Enter your phone number">
+
             <button type="submit">Submit</button>
         </form>
     </div>
+
+    <script>
+        document.getElementById("ask-ai-button").addEventListener("click", function() {
+            const question = document.getElementById("ai-question").value;
+            const answerElement = document.getElementById("ai-answer");
+            if (question.trim()) {
+                answerElement.textContent = `AI is thinking... (this is where the answer to '${question}' will appear)`;
+            } else {
+                answerElement.textContent = "Please type a question.";
+            }
+        });
+    </script>
 </body>
 </html>
