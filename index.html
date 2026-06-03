@@ -3,106 +3,112 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mortgage IQ AI | Powered by Ashton Epps</title>
-  <meta name="description" content="Mortgage premium platform with personalized solutions for all your mortgage needs." />
+  <title>Ashton Epps | Mortgage Help in VA & NC</title>
+  <meta name="description" content="Mortgage guidance, calculators, and quick answers for buyers, homeowners, VA borrowers, and refinance shoppers." />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-    .sticky-nav {
-      position: sticky;
-      top: 0;
-      background: var(--panel);
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-    .sticky-nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
-    .section {
-      padding: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: var(--panel);
-      font-size: 14px;
-      color: var(--muted);
-    }
-    .calculator, .va-loan {
-      margin: 30px auto;
-      max-width: 600px;
-      padding: 20px;
-      background: var(--card);
-      border-radius: 8px;
-    }
-  </style>
 </head>
 <body>
-  <div class="sticky-nav">
-    <a href="#home">Home</a>
-    <a href="#calculator">Calculator</a>
-    <a href="#live-rates">Live Rates</a>
-    <a href="#ask-ai">Ask AI</a>
-    <a href="#va-loan">VA Loans</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <main>
-    <section id="home" class="section">
-      <h1>Welcome to Mortgage IQ AI</h1>
-      <p>Your personalized premium mortgage platform.</p>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="#top">Ashton Epps</a>
+      <div class="nav-links">
+        <a href="#rates">Rates</a><a href="#calculator">Calculator</a><a href="#qa">Ask</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">VA • NC • Nationwide mortgage questions</p>
+        <h1>Clear mortgage answers before you make a big move.</h1>
+        <p class="subtitle">Run payments, check current national averages, ask common loan questions, and send your scenario straight to Ashton.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#calculator">Run payment</a>
+          <a class="button secondary" href="#contact">Get help</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <span class="badge">Current national average</span>
+        <div class="rate-big">6.53%</div>
+        <p>30-year fixed average as of May 28, 2026, Freddie Mac PMMS.</p>
+        <a href="https://www.freddiemac.com/pmms" target="_blank" rel="noopener">View Freddie Mac PMMS</a>
+      </div>
     </section>
 
-    <section id="calculator" class="section calculator">
-      <h2>Mortgage Calculator</h2>
-      <form>
-        <label>Home Price: <input type="number" placeholder="E.g., 300000"></label><br/>
-        <label>Down Payment: <input type="number" placeholder="E.g., 60000"></label><br/>
-        <label>Rate: <input type="number" step="0.01" placeholder="E.g., 3.25"></label><br/>
-        <label>Loan Term (Years): <input type="number" placeholder="E.g., 30"></label><br/>
-        <button>Calculate</button>
+    <section id="rates" class="section rate-section">
+      <div class="section-heading">
+        <p class="eyebrow">Market snapshot</p>
+        <h2>Current national mortgage rate averages</h2>
+        <p>These are national survey averages, not a quote. Your actual rate depends on credit, loan type, points, property, occupancy, and lender pricing.</p>
+      </div>
+      <div class="cards rates-grid">
+        <article class="card"><span>30-Year Fixed</span><strong>6.53%</strong><small>Freddie Mac PMMS, May 28, 2026</small></article>
+        <article class="card"><span>15-Year Fixed</span><strong>5.87%</strong><small>Freddie Mac PMMS, May 28, 2026</small></article>
+        <article class="card"><span>Daily 30-Year Fixed</span><strong>6.52%</strong><small>Bankrate via WSJ Buy Side, June 3, 2026</small></article>
+      </div>
+    </section>
+
+    <section class="section benefits">
+      <div class="feature"><h3>Purchase</h3><p>Estimate payments and get a clean first look at affordability.</p></div>
+      <div class="feature"><h3>VA Loans</h3><p>Questions on eligibility, funding fee, IRRRLs, and refinancing.</p></div>
+      <div class="feature"><h3>Refinance</h3><p>Compare current payment, new payment, and breakeven basics.</p></div>
+    </section>
+
+    <section id="calculator" class="section calc-wrap">
+      <div>
+        <p class="eyebrow">Mortgage calculator</p>
+        <h2>Estimate your monthly payment</h2>
+        <p>Includes principal, interest, taxes, insurance, and HOA. PMI is not included unless you add it into insurance/other costs.</p>
+      </div>
+      <form class="calculator" onsubmit="return false;">
+        <label>Home price <input id="price" type="number" value="400000" /></label>
+        <label>Down payment <input id="down" type="number" value="20000" /></label>
+        <label>Interest rate % <input id="rate" type="number" step="0.01" value="6.53" /></label>
+        <label>Loan term years <input id="term" type="number" value="30" /></label>
+        <label>Annual taxes <input id="taxes" type="number" value="3600" /></label>
+        <label>Annual insurance <input id="ins" type="number" value="1800" /></label>
+        <label>Monthly HOA/other <input id="hoa" type="number" value="0" /></label>
+        <button class="button primary" id="calcBtn">Calculate</button>
+        <div class="result"><span>Estimated payment</span><strong id="payment">$0</strong><small id="loanAmount"></small></div>
       </form>
     </section>
 
-    <section id="va-loan" class="section va-loan">
-      <h2>VA Loan Center</h2>
-      <p>Find all the resources you need for VA loans, including eligibility guidance and more.</p>
+    <section id="qa" class="section qa-section">
+      <div class="section-heading">
+        <p class="eyebrow">Mortgage Q&A</p>
+        <h2>Ask a quick mortgage question</h2>
+        <p>Type a question like “What is an IRRRL?”, “How much down payment do I need?”, or “What affects my rate?”</p>
+      </div>
+      <div class="ask-box">
+        <input id="question" placeholder="Ask your mortgage question..." />
+        <button class="button primary" id="askBtn">Ask</button>
+        <div id="answer" class="answer">Your answer will show here.</div>
+      </div>
     </section>
 
-    <section id="why" class="section">
-      <h2>Why Work With Ashton Epps</h2>
-      <p>We offer unmatched expertise, cutting-edge AI technology, and a customer-first approach.</p>
-    </section>
-
-    <section id="testimonials" class="section">
-      <h2>What Our Clients Say</h2>
-      <blockquote>"Simplest way to understand complicated mortgages." - Happy Client</blockquote>
-    </section>
-
-    <section id="contact" class="section">
-      <h2>Contact Us</h2>
-      <form>
-        <label>Name: <input type="text"></label><br/>
-        <label>Email: <input type="email"></label><br/>
-        <label>Message: <textarea></textarea></label><br/>
-        <button>Send</button>
+    <section id="contact" class="section contact-section">
+      <div>
+        <p class="eyebrow">Talk to Ashton</p>
+        <h2>Send your scenario</h2>
+        <p>Use this form for purchase, refinance, VA loan, or general mortgage questions. It sends to Ashton’s email.</p>
+      </div>
+      <form class="contact-form" action="https://formsubmit.co/epps.ashton@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New mortgage lead from AshtonEpps.com" />
+        <input type="hidden" name="_captcha" value="false" />
+        <label>Name <input name="name" required /></label>
+        <label>Email <input name="email" type="email" required /></label>
+        <label>Phone <input name="phone" /></label>
+        <label>State <input name="state" placeholder="VA, NC, etc." /></label>
+        <label>What do you need help with? <textarea name="message" rows="5" required></textarea></label>
+        <button class="button primary" type="submit">Send to Ashton</button>
       </form>
     </section>
   </main>
+
   <footer>
-    <p>© 2026 Mortgage IQ AI | Licensed & Compliant</p>
+    <p>© 2026 Ashton Epps. Educational information only; not a commitment to lend or a rate quote. Rates change daily and vary by borrower scenario.</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
